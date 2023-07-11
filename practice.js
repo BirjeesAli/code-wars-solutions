@@ -3,8 +3,7 @@
 // 1450 -> 145
 // -1050 -> -105
 
-function trimZeroes(num){
-    while (num%10 === 0 ){
+function trimZeroes(num){gti
         num = num/10
     }
     return num
@@ -23,5 +22,5 @@ function trimZeroes(num){
     }
 }
 
-// console.log(trimZeroes(10500050000000))
+console.log(trimZeroes(10500050000000))
 // console.log(trim2(-1050506030600))
