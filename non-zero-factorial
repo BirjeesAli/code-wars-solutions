@@ -1,0 +1,16 @@
+function lastDigit(n) {
+    let fact = n
+    if (n > 1){
+        for (i=n-1; i>0; i--){
+            n *= i
+        }
+        console.log(n)
+        while (n%10 === 0 ){
+            n = n/10
+        }
+        return (String(n).slice(-1), n)
+    }
+    return 1
+}
+
+console.log(lastDigit(387))
