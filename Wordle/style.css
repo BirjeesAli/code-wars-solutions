@@ -1,0 +1,12 @@
+/* .topDiv{
+    padding-top: 5%;
+} */
+
+input { 
+    text-align: center;
+    text-transform:uppercase;
+}
+
+.input-letter{
+    width: 60%;
+}
