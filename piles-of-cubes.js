@@ -17,20 +17,20 @@ function findNb(m) {
 
        if (guess === m) return n;
        else if (guess<m){
-           prev = n, n += 80;
+           prev = n, n += 10;
        }
        else {
-           break
+           break;
        }
    }
    for (let num = prev; num < n; num ++){
-       if(cube(num) === m) return num
+       if(cube(num) === m) return num;
    }
-   return -1
+   return -1;
 }
 
 
-console.log(findNb(91968291800100));
+console.log(findNb(1071225));
 
 // function findNbOrg(m) {
 //     for (let n = 1; n<m; n++){

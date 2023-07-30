@@ -1,4 +1,4 @@
-// Your task in order to complete this Kata is to write a function which formats a duration, 
+// Write a function which formats a duration, 
 // given as a number of seconds, in a human-friendly way.
 
 // The function must accept a non-negative integer. If it is zero, it just returns "now". 
@@ -6,20 +6,17 @@
 
 
 function formatDuration (seconds) {
-    if (seconds == 0) return "now"
-    
+    if (seconds == 0) return "now";
     const minute = Math.floor(seconds/60), hour = Math.floor(minute/60), days=(hour/24), years=(days/365);
     ref = {"year": Math.floor(years), "day": Math.floor(days%365), "hour": Math.floor(hour%24), "minute": Math.floor(minute%60), "second": seconds%60};
-    res = ""
-    // console.log(days%2)
-    // ref['day'] = (ref['year'] ? ref['day']%24 : ref['day'])
+    res = ""    
 
     for (let key of Object.keys(ref)){
-        if (ref[key] == 0) delete ref[key]
+        if (ref[key] == 0) delete ref[key];
     }
 
     for (let i in ref){
-        if ( i!=0){
+        if (i!=0){
             idx = Object.keys(ref).indexOf(i)
             if (Object.keys(ref).length > 1 && idx == Object.keys(ref).length-1) res += "and "
             res += ref[i]+" "+i+((ref[i] > 1)?"s":'')

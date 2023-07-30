@@ -1,8 +1,13 @@
+// Your task is to sort a given string. Each word in the string will contain a single number. 
+// This number is the position the word should have in the result.
+// Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
+// If the input string is empty, return an empty string. 
+// The words in the input String will only contain valid consecutive numbers.
+
 function extractNumber(string){
-    const nums = '0123456789';
     let num = '';
     for (let char of string){
-        if (nums.includes(char)){
+        if (char.charCodeAt(0) >= 48 && char.charCodeAt(0) <= 57){
             num += char;
         }
     }
@@ -14,13 +19,9 @@ function order(words){
     let splitted = words.split(' ');
     let address = {};
     let res = '';
-
     for (let idx in splitted){
-        let num = extractNumber(splitted[idx])
-        num -= 1;
-        address[num] = idx;
+        address[(extractNumber(splitted[idx])-1)] = idx;
     }
-
     for (let i = 0; i < splitted.length; i++){
         res += splitted[address[i]];
         if (i < splitted.length-1){

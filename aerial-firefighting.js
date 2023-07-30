@@ -11,10 +11,9 @@
 
 
 function waterbombs(fire, w) {
-    res = 0
-    for (const burn of fire.split("Y")) {res+=(Math.ceil(burn.length/w))}
-    return res
+    res = 0;
+    for (const burn of fire.split("Y")) {res+=(Math.ceil(burn.length/w))};
+    return res;
 }
 
-
-console.log(waterbombs("xx", 1))
+console.log(waterbombs("xxYxxxxx", 2));
