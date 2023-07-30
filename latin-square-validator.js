@@ -18,7 +18,6 @@ function verifyLatinSquare(array, n){
 
             if (i<(array.length-1)){
                 for (idx=i+1; idx<array.length; idx++){
-                    // console.log(array[i][j], array[idx][j])
                     if (array[i][j] === array[idx][j]) {
                         console.log(array[i][j], array[idx][j], i, idx)
                         return `${array[i][j]} occurs more than once in column ${j+1}`
