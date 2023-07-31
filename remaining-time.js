@@ -16,16 +16,13 @@ function formatDuration (seconds) {
     }
 
     for (let i in ref){
-        if (i!=0){
-            idx = Object.keys(ref).indexOf(i)
-            if (Object.keys(ref).length > 1 && idx == Object.keys(ref).length-1) res += "and "
-            res += ref[i]+" "+i+((ref[i] > 1)?"s":'')
-            if (idx != Object.keys(ref).length-2 && Object.keys(ref).length > 2 && idx < Object.keys(ref).length-1) res += ","
-            if (Object.keys(ref).length > 1 && idx != Object.keys(ref).length-1) res += " "
-        }
+        idx = Object.keys(ref).indexOf(i);
+        if (Object.keys(ref).length > 1 && idx == Object.keys(ref).length-1) res += " and ";
+        res += ref[i]+" "+i+((ref[i] > 1)?"s":'');
+        if (Object.keys(ref).length > 2 && idx < Object.keys(ref).length-2) res += ", ";
     }
-    return res
+    return res;
   }
 
 
-console.log(formatDuration(15731080));
+console.log(formatDuration(1515000));
